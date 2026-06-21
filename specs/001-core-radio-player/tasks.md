@@ -25,11 +25,12 @@ description: "Task list for Core Radio Player feature"
 
 **Purpose**: Project initialization and install dependencies
 
-- [ ] T001 Initialize Expo project with TypeScript strict mode in `tsconfig.json`
-- [ ] T002 Install dependencies: `npx expo install react-native-track-player zustand expo-constants expo-build-properties`
-- [ ] T003 [P] Configure `app.json` with `expo-build-properties` plugin
-- [ ] T004 [P] Create `.env` with `EXPO_PUBLIC_STREAM_URL=https://147.15.107.66.nip.io/stream`
-- [ ] T005 Create `src/constants/index.ts` to export env vars
+- [x] T001 Initialize Expo project with TypeScript strict mode in `tsconfig.json`
+- [x] T001b Fix live stream resume: reset and re-add track on play after pause in `src/store/usePlayerStore.ts`
+- [x] T002 Install dependencies: `npx expo install react-native-track-player zustand expo-constants expo-build-properties`
+- [x] T003 [P] Configure `app.json` with `expo-build-properties` plugin
+- [x] T004 [P] Create `.env` with `EXPO_PUBLIC_STREAM_URL=https://147.15.107.66.nip.io/stream`
+- [x] T005 Create `src/constants/index.ts` to export env vars
 
 ---
 
@@ -39,10 +40,10 @@ description: "Task list for Core Radio Player feature"
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T006 Create `src/services/playerSetup.ts` — TrackPlayer initialization with audio config and live stream track
-- [ ] T007 Create `src/services/playbackService.ts` — register event handlers for remote play/pause/stop and playback state changes
-- [ ] T008 Create `src/store/usePlayerStore.ts` — zustand store with `isPlaying`, `isBuffering`, `play()`, `pause()`, `setBuffering()`
-- [ ] T009 Wire playback service registration in `App.tsx` — call `TrackPlayer.registerPlaybackService()` before any component mounts
+- [x] T006 Create `src/services/playerSetup.ts` — TrackPlayer initialization with audio config and live stream track
+- [x] T007 Create `src/services/playbackService.ts` — register event handlers for remote play/pause/stop and playback state changes
+- [x] T008 Create `src/store/usePlayerStore.ts` — zustand store with `isPlaying`, `isBuffering`, `play()`, `pause()`, `setBuffering()`
+- [x] T009 Wire playback service registration in `App.tsx` — call `TrackPlayer.registerPlaybackService()` before any component mounts
 
 **Checkpoint**: Foundation ready — player initializes, store syncs with TrackPlayer state
 
@@ -56,9 +57,9 @@ description: "Task list for Core Radio Player feature"
 
 ### Implementation for User Story 1
 
-- [ ] T010 [P] [US1] Create `src/components/PlayButton.tsx` — pressable button showing Play/Pause icon or loading spinner based on store state
-- [ ] T011 [P] [US1] Add station logo asset to `assets/logo.png`
-- [ ] T012 [US1] Create `src/screens/HomeScreen.tsx` — layout with logo image + PlayButton centered, StyleSheet styling, UI text in PT-BR
+- [x] T010 [P] [US1] Create `src/components/PlayButton.tsx` — pressable button showing Play/Pause icon or loading spinner based on store state
+- [x] T011 [P] [US1] Add official station logo to `assets/logo.png`
+- [x] T012 [US1] Create `src/screens/HomeScreen.tsx` — layout with logo placeholder + PlayButton centered, StyleSheet styling, UI text in PT-BR
 
 **Checkpoint**: US1 fully functional — basic playback works end-to-end
 

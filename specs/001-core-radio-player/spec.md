@@ -35,6 +35,9 @@ audio continues when the screen is locked or the app is backgrounded.
    stops and the button changes back to a Play icon
 4. **Given** audio is playing, **When** the listener locks the screen or
    minimizes the app, **Then** audio continues playing without interruption
+5. **Given** audio was paused and some time has passed, **When** the listener
+   taps Play again, **Then** the app reconnects to the live broadcast (does
+   NOT resume from the buffered position)
 
 ---
 
@@ -108,7 +111,8 @@ resumes automatically.
 - **FR-002**: The app MUST show a visual loading/buffering indicator when the
   listener taps Play and the connection to the stream is being established.
 - **FR-003**: The app MUST begin audio playback once the stream connection is
-  established.
+  established. When resuming after a pause, the app MUST reconnect to the live
+  broadcast rather than continuing from the previously buffered position.
 - **FR-004**: The Play button MUST change to a Pause button while audio is
   playing and back to Play when paused.
 - **FR-005**: Audio playback MUST continue when the app is sent to the
