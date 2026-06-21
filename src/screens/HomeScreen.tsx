@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native"
+import { View, Text, Image, StyleSheet } from "react-native"
 import PlayButton from "../components/PlayButton"
 import { STATION_NAME } from "../constants"
 
@@ -6,11 +6,13 @@ export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
-        <View style={styles.logoPlaceholder}>
-          <Text style={styles.logoText}>FM</Text>
-        </View>
+        <Image
+          source={require("../../assets/logo.png")}
+          style={styles.logo}
+          resizeMode="contain"
+        />
         <Text style={styles.title}>{STATION_NAME}</Text>
-        <Text style={styles.subtitle}>Aperte o play e sinta o ritmo</Text>
+        <Text style={styles.subtitle}>Ao vivo com a melhor programação</Text>
         <PlayButton />
       </View>
     </View>
@@ -20,7 +22,7 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#121212",
+    backgroundColor: "#0D0D0D",
   },
   content: {
     flex: 1,
@@ -28,19 +30,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     paddingHorizontal: 32,
   },
-  logoPlaceholder: {
-    width: 200,
-    height: 200,
-    borderRadius: 100,
-    backgroundColor: "#1DB954",
-    alignItems: "center",
-    justifyContent: "center",
+  logo: {
+    width: 240,
+    height: 240,
     marginBottom: 24,
-  },
-  logoText: {
-    fontSize: 64,
-    fontWeight: "bold",
-    color: "#fff",
+    borderRadius: 120,
   },
   title: {
     fontSize: 28,
@@ -50,7 +44,7 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: 16,
-    color: "#aaa",
+    color: "#F6F2E6",
     marginBottom: 48,
   },
 })

@@ -9,7 +9,7 @@
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#121212"
+      "backgroundColor": "#0D0D0D"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -18,13 +18,15 @@
       "supportsTablet": false,
       "bundleIdentifier": "com.japaratingafm.radio",
       "infoPlist": {
-        "UIBackgroundModes": ["audio"]
+        "UIBackgroundModes": [
+          "audio"
+        ]
       }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#121212"
+    "backgroundColor": "#0D0D0D"
       },
       "package": "com.japaratingafm.radio"
     },
@@ -39,7 +41,14 @@
             ]
           }
         }
-      ]
-    ]
+      ],
+      "expo-asset",
+      "expo-font"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "40da6a27-f65e-45f6-bc1b-eba08c944dd7"
+      }
+    }
   }
 }
