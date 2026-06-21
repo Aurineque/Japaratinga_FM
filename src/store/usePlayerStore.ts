@@ -8,6 +8,7 @@ interface PlayerStore {
   play: () => Promise<void>
   pause: () => Promise<void>
   setBuffering: (value: boolean) => void
+  setIsPlaying: (value: boolean) => void
   syncState: () => Promise<void>
 }
 
@@ -44,6 +45,10 @@ export const usePlayerStore = create<PlayerStore>((set) => ({
 
   setBuffering: (value: boolean) => {
     set({ isBuffering: value })
+  },
+
+  setIsPlaying: (value: boolean) => {
+    set({ isPlaying: value })
   },
 
   syncState: async () => {

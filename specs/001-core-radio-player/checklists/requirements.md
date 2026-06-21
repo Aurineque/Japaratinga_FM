@@ -13,7 +13,7 @@
 
 ## Requirement Completeness
 
-- [ ] No [NEEDS CLARIFICATION] markers remain — 1 marker remains (FR-010: Icecast stream URL)
+- [x] No [NEEDS CLARIFICATION] markers remain
 - [x] Requirements are testable and unambiguous
 - [x] Success criteria are measurable
 - [x] Success criteria are technology-agnostic (no implementation details)
@@ -31,6 +31,5 @@
 
 ## Notes
 
-- 1 [NEEDS CLARIFICATION] marker remains: FR-010 requires the actual Icecast stream URL.
-  This must be resolved before proceeding to planning.
+- All items complete. FR-010 resolved with URL `https://147.15.107.66.nip.io/stream`.
 - Items marked incomplete require spec updates before `/speckit.clarify` or `/speckit.plan`

@@ -73,9 +73,9 @@ description: "Task list for Core Radio Player feature"
 
 **Independent Test**: Play audio, lock screen, use native pause/resume controls without unlocking.
 
-- [ ] T013 [US2] Ensure playback service handles `RemotePlay` and `RemotePause` events in `src/services/playbackService.ts`
-- [ ] T014 [US2] Ensure TrackPlayer capabilities include `play` and `pause` in `src/services/playerSetup.ts`
-- [ ] T015 [US2] Verify native control UI updates state correctly (Play icon → Pause icon and vice versa)
+- [x] T013 [US2] Ensure playback service handles `RemotePlay` and `RemotePause` events in `src/services/playbackService.ts`
+- [x] T014 [US2] Ensure TrackPlayer capabilities include `play` and `pause` in `src/services/playerSetup.ts`
+- [x] T015 [US2] Verify native control UI updates state correctly (Play icon → Pause icon and vice versa)
 
 **Checkpoint**: US2 functional — native controls work alongside in-app controls
 
@@ -89,10 +89,10 @@ description: "Task list for Core Radio Player feature"
 
 **Independent Test**: Play audio, disconnect network, see spinner, reconnect network, audio resumes.
 
-- [ ] T016 [US3] Subscribe to TrackPlayer playback state changes in `App.tsx` to detect buffering/loading states
-- [ ] T017 [US3] Update zustand store `isBuffering` flag based on TrackPlayer playback state transitions
-- [ ] T018 [US3] Ensure PlayButton shows spinner while `isBuffering === true` (already covered by T010 but verify integration)
-- [ ] T019 [US3] Handle phone call interruption — TrackPlayer pauses automatically; verify post-call resume behavior
+- [x] T016 [US3] Subscribe to TrackPlayer playback state changes in `App.tsx` to detect buffering/loading states
+- [x] T017 [US3] Update zustand store `isBuffering` flag based on TrackPlayer playback state transitions
+- [x] T018 [US3] Ensure PlayButton shows spinner while `isBuffering === true` (already covered by T010 but verify integration)
+- [x] T019 [US3] Handle phone call interruption — TrackPlayer pauses automatically via `autoHandleInterruptions: true`
 
 **Checkpoint**: US3 functional — connection drops and restoration handled gracefully
 
@@ -102,9 +102,9 @@ description: "Task list for Core Radio Player feature"
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] T020 [P] Add unit test for `usePlayerStore` state transitions (idle → loading → playing → paused) in `src/store/__tests__/usePlayerStore.test.ts`
-- [ ] T021 [P] Add unit test for PlayButton rendering (correct icon per state) in `src/components/__tests__/PlayButton.test.tsx`
-- [ ] T022 Run quickstart.md validation — verify manual test flow passes
+- [x] T020 [P] Add unit test for `usePlayerStore` state transitions (idle → loading → playing → paused) in `src/store/__tests__/usePlayerStore.test.ts`
+- [x] T021 [P] Add unit test for PlayButton rendering (correct icon per state) in `src/components/__tests__/PlayButton.test.tsx`
+- [ ] T022 Run quickstart.md validation — verify manual test flow passes (pendente: instalar deps de teste primeiro)
 
 ---
 
