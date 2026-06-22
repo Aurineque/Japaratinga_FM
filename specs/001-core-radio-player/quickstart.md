@@ -46,6 +46,29 @@ npx expo start
 
 Press `i` for iOS simulator or `a` for Android emulator.
 
+## CI/CD Pipeline
+
+O pipeline automatiza build e deploy via GitHub Actions:
+
+- **CI**: TypeScript check + Jest em todo `git push`
+- **EAS Update (OTA)**: Em push para `main`, atualiza o app em segundos sem reinstalar APK
+- **EAS Build + Release**: Gera APK novo e sobe para GitHub Release com link permanente
+
+### Workflows
+
+| Workflow | Arquivo | O que faz |
+|----------|---------|-----------|
+| CI | `.github/workflows/ci.yml` | TypeCheck + Jest em qualquer branch |
+| Deploy | `.github/workflows/deploy.yml` | EAS Update + Build + Release em push para `main` |
+
+### Link para Download do APK
+
+```
+https://github.com/SEU_USUARIO/japaratinga-fm/releases/latest/download/app-release.apk
+```
+
+Substitua `SEU_USUARIO` pelo nome do seu usuário GitHub.
+
 ## Testing
 
 ### Manual Test Flow
