@@ -24,6 +24,11 @@ export async function setupPlayer(): Promise<void> {
 }
 
 export async function addStreamTrack(): Promise<void> {
+  if (!STREAM_URL) {
+    throw new Error(
+      "EXPO_PUBLIC_STREAM_URL não configurado. Crie um arquivo .env na raiz do projeto com EXPO_PUBLIC_STREAM_URL=https://seu-servidor/stream"
+    )
+  }
   await TrackPlayer.add({
     url: STREAM_URL,
     title: "Japaratinga FM",
