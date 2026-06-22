@@ -9,7 +9,7 @@ export async function setupPlayer(): Promise<void> {
   await TrackPlayer.updateOptions({
     android: {
       appKilledPlaybackBehavior:
-        AppKilledPlaybackBehavior.ContinuePlayback,
+        AppKilledPlaybackBehavior.StopPlaybackAndRemoveNotification,
     },
     capabilities: [
       Capability.Play,
