@@ -19,6 +19,7 @@
       "bundleIdentifier": "com.japaratingafm.radio",
       "infoPlist": {
         "UIBackgroundModes": [
+          "audio",
           "audio"
         ]
       }
@@ -26,7 +27,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-    "backgroundColor": "#0D0D0D"
+        "backgroundColor": "#0D0D0D"
       },
       "package": "com.japaratingafm.radio"
     },
@@ -49,6 +50,12 @@
       "eas": {
         "projectId": "40da6a27-f65e-45f6-bc1b-eba08c944dd7"
       }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/40da6a27-f65e-45f6-bc1b-eba08c944dd7"
     }
   }
 }
