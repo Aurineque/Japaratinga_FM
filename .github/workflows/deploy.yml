@@ -56,7 +56,7 @@ jobs:
           EXPO_NO_VCS: 1
       - name: Download APK
         run: |
-          eas build:download ${{ env.BUILD_ID }} --platform android --output-dir ./ --non-interactive
+          eas build:download ${{ env.BUILD_ID }} --platform android --non-interactive
           mv *.apk app-release.apk 2>/dev/null || true
           ls -la *.apk
         env:
