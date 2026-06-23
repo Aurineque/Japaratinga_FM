@@ -1,0 +1,38 @@
+jest.mock("react-native-track-player", () => ({
+  setupPlayer: jest.fn(() => Promise.resolve()),
+  updateOptions: jest.fn(() => Promise.resolve()),
+  add: jest.fn(() => Promise.resolve()),
+  reset: jest.fn(() => Promise.resolve()),
+  play: jest.fn(() => Promise.resolve()),
+  pause: jest.fn(() => Promise.resolve()),
+  stop: jest.fn(() => Promise.resolve()),
+  destroy: jest.fn(() => Promise.resolve()),
+  addEventListener: jest.fn(() => ({ remove: jest.fn() })),
+  getState: jest.fn(() => Promise.resolve("none")),
+  getPlaybackState: jest.fn(() => Promise.resolve({ state: "none" })),
+  registerPlaybackService: jest.fn(),
+  Capability: {
+    Play: "play",
+    Pause: "pause",
+    Stop: "stop",
+  },
+  AppKilledPlaybackBehavior: {
+    ContinuePlayback: "continue-playback",
+    PausePlayback: "pause-playback",
+    StopPlaybackAndRemoveNotification: "stop-playback-and-remove-notification",
+  },
+  State: {
+    None: "none",
+    Ready: "ready",
+    Playing: "playing",
+    Paused: "paused",
+    Stopped: "stopped",
+    Loading: "loading",
+    Buffering: "buffering",
+    Error: "error",
+    Ended: "ended",
+  },
+  Event: {
+    PlaybackState: "playback-state",
+  },
+}))
