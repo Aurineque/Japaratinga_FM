@@ -49,16 +49,16 @@ jobs:
       - name: EAS Build
         run: |
           eas build --platform android --profile preview --non-interactive --wait 2>&1 | tee build.log
-          BUILD_ID=$(grep -oP '[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}' build.log | tail -1)
-          echo "BUILD_ID=$BUILD_ID" >> $GITHUB_ENV
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
           EXPO_NO_VCS: 1
-      - name: Download APK
+      - name: Download APK via build URL
         run: |
-          eas build:download ${{ env.BUILD_ID }} --platform android --non-interactive
-          mv *.apk app-release.apk 2>/dev/null || true
-          ls -la *.apk
+          BUILD_URL=$(eas build:list --json --limit=1 --platform=android --non-interactive 2>/dev/null | \
+            python3 -c "import sys,json; print(json.load(sys.stdin)[0]['artifacts']['buildUrl'])")
+          echo "URL: $BUILD_URL"
+          curl -H "Authorization: Bearer ${{ secrets.EXPO_TOKEN }}" -fsSL -o app-release.apk "$BUILD_URL"
+          ls -la app-release.apk
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
       - name: Create/Update GitHub Release
